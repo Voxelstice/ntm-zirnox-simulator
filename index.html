@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <!-- YOU MUST PLAY HBM'S NUCLEAR TECH MOD -->
+    <!-- IMMEDIATELY!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/x-icon" href="assets/icon.png">
+        <title>NTM ZIRNOX Simulator</title>
+    </head>
+
+    <body>
+        <div id="changelog" class="hide">
+            <h2 style="margin-top: 2px;/*! margin-right: 2px; */">v0.0.1a</h2>
+            <h5 style="margin-top: -16px;color: #808080;margin-bottom: 14px;">Hey guys look i added changelog - 19/07/2023</h5><hr style="/*! margin-top: auto; */">
+            <div id="innerChangelog" style="height: 130px;overflow-y:auto">
+                • Inital release<br>
+                • Added a proper changelog screen<br>
+                (people looking at this probably dont even know who notsu is but i stole the changelog from him (please don't tell him (i modified it a bit)))<br>
+                <br><br>
+                NOTE: When the fuel gets depleted, it will be just empty. Yeah. Just gone, like that.
+            </div><hr>
+            <button onclick="document.getElementById('changelog').className = 'hide'" style="margin-top: 4px;">Close</button>
+        </div>
+
+        <p style="position: absolute; margin: 0px;">Welcome to NTM ZIRNOX Simulator.<br>This site is meant to simulate the mechanics<br>of NTM's ZIRNOX in a browser.<br><br>If you are unfamiliar with NTM's ZIRNOX, <a href="https://ntm.fandom.com/wiki/ZIRNOX">check out the wiki page.</a></p>
+        <p style="position: absolute; margin: 0px; margin-top: 120px;">This is slightly different compared to the RBMK simulator.<br>Click on empty fuel slots and then select fuel.<br>Then just press "Activate" or the small red button<br>on the UI to activate the reactor.</p>
+
+        <canvas width="609px" height="498px" id="zirnox" style="z-index: 1; position: absolute; margin-left: 40%;"></canvas>
+        <p id="explosionText" style="z-index: 3; position: absolute; margin-left: 40%; text-align: center; width: 609px; height: 498px; background-color: rgba(0,0,0, 0.5); margin-top: 0px; visibility: hidden;"><br>You destroyed the ZIRNOX.<br>Congratulations.</p>
+        <p style="z-index: 3; position: absolute; margin-top: 25%; margin-left: 40%; text-align: center; width: 480px; height: 480px;"><br>The site's source code is public. <a href="https://github.com/Voxelstice/ntm-zirnox-simulator">GitHub</a><br>Power generation is not calculated. Test that in a creative world.</p>
+
+        <button action="new" onclick="button()" style="margin-top: 240px;">New</button>
+        <button action="run" onclick="button()" style="margin-top: 240px;">Activate</button>
+        <button action="changelog" onclick="button()" style="margin-top: 240px;">Changelog</button>
+        <button class="showInDesign" action="export" tooltip="Exports current ZIRNOX design to clipboard into JSON" onclick="button()" style="margin-top: 240px;">Export</button>
+        <button class="showInDesign" action="import" onclick="button()" style="margin-top: 240px;">Import</button>
+
+        <br>
+        <br>
+
+        <p style="margin: 0px; font-size: 25px;">Config</p>
+        <div id="config" style="background-color: rgb(12,12,12); width: 480px; height: 96px;">
+            <div style="margin: 0px;" id="config_main"></div>
+        </div>
+        <br>
+        <p style="margin: 0px; font-size: 25px;">Fuels</p>
+        <div id="fuels" style="background-color: rgb(12,12,12); width: 480px; height: 64px;">
+            
+        </div>
+
+        <button class="showInDesign" action="reactorfill" onclick="button()" style="margin-top: 8px;">Fill</button>
+    </body>
+
+    <script src="src/classes/fuel.js"></script>
+    <script src="src/classes/zirnox.js"></script>
+    <script src="src/classes/renderer.js"></script>
+    <script src="src/index.js"></script>
+</html>
