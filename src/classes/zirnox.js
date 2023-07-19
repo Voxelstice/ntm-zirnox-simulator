@@ -251,7 +251,7 @@ class ZIRNOX
             sW: 18,
             sH: 12
         })
-        checkIfInside(160*3, 108*3, 18*3, 12*3, `Super Dense Steam<br>${this.steam}/${this.steamMax}mB`)
+        checkIfInside(160*3, 108*3, 18*3, 12*3, `Super Dense Steam<br>${Math.floor(this.steam)}/${this.steamMax}mB`)
 
         this.renderer.draw("image", { // Water
             img: this.consoleImg,
@@ -267,7 +267,7 @@ class ZIRNOX
             sW: 18,
             sH: 12
         })
-        checkIfInside(178*3, 108*3, 18*3, 12*3, `Water<br>${this.water}/${this.waterMax}mB`)
+        checkIfInside(178*3, 108*3, 18*3, 12*3, `Water<br>${Math.floor(this.water)}/${this.waterMax}mB`)
 
         // dials
         this.renderer.draw("image", { // Temperature
