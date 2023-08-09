@@ -194,7 +194,7 @@ class ZIRNOX
     }
 
     meltdown() {
-        this.expSound.volume = 0.4
+        this.expSound.volume = 0.1
         this.expSound.pause()
         this.expSound.currentTime = 0
         this.expSound.play()
